@@ -21,7 +21,7 @@ $(document).ready(() => {
 
   // Auto Slider Handler
   if(autoswitch == true)
-    //setInterval(() => nextSlide(), autoswitch_speed);
+    setInterval(() => nextSlide(), autoswitch_speed);
 
 
 
@@ -35,6 +35,7 @@ $(document).ready(() => {
     }
     oldActive.fadeOut(speed);
     $('.active').fadeIn(speed);
+
   }
 
   function prevSlide(){

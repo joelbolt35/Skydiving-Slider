@@ -41,7 +41,7 @@ h1{
 #slider img{
   width: 1275px;
   height: 717px;
-  margin-left: -160px;
+  margin-left: 0px;
 }
 
 #prev, #next{
@@ -59,15 +59,15 @@ h1{
 .slide-copy{
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.5);
-  width: 932px;
+  width: 1230px;
 }
 #prev{
   margin-right: -56px;
 }
 
 #next{
-  margin-left: -361px;
+  margin-left: -66px;
 }
