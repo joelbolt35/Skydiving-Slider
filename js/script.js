@@ -1,7 +1,7 @@
 $(document).ready(() => {
   // Set Options
   var speed = 500;            // Fade speed
-  var autoswitch = true;      // Auto slider options
+  var autoswitch;             // Auto slider options
   var autoswitch_speed = 4000 // Auto slider speed
 
   // Add initial active class
@@ -19,10 +19,8 @@ $(document).ready(() => {
   // Prev Handler
   $('#prev').click(() => prevSlide());
 
-  // Auto Slider Handler
-  if(autoswitch == true)
-    setInterval(() => nextSlide(), autoswitch_speed);
-
+  //start autoswitch
+  start_autoswitch();
 
 
   /*---------Funcitons---------*/
@@ -36,6 +34,9 @@ $(document).ready(() => {
     oldActive.fadeOut(speed);
     $('.active').fadeIn(speed);
 
+    //reset timer on autoswitch
+    clearInterval(autoswitch);
+    start_autoswitch();
   }
 
   function prevSlide(){
@@ -47,7 +48,15 @@ $(document).ready(() => {
     }
     oldActive.fadeOut(speed);
     $('.active').fadeIn(speed);
+
+    //reset timer on autoswitch
+    clearInterval(autoswitch);
+    start_autoswitch();
   }
 
+  // Auto Slider Handler
+  function start_autoswitch(){
+    autoswitch = setInterval(() => nextSlide(), autoswitch_speed);
+  }
   // End of JS Ready
 });
